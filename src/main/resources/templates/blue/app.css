@@ -1,0 +1,22 @@
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+    padding-right: 20px;
+}
+/*这里有没最佳实践了？会不会放大缩小后出问题*/
+input.form-control.form-inline{
+    width: 54%;
+    margin-right: 10%;
+}
+select.form-control.selectpicker.form-inline{
+    width: 36%;
+}
+#success_message{
+    display: none;
+}
+/*继续添加按钮*/
+.btn.btn-warning.add{
+    margin-right: 20px;
+}

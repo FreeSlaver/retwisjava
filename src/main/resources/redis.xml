@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--Redis-->
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxIdle" value="${redis.pool.maxIdle}" />
+        <property name="testOnBorrow" value="${redis.pool.testOnBorrow}" />
+    </bean>
+
+    <bean id="redisSentinelConfiguration"
+          class="org.springframework.data.redis.connection.RedisSentinelConfiguration">
+
+        <property name="master">
+            <bean class="org.springframework.data.redis.connection.RedisNode">
+                <property name="name" value="${redis.sentinel.masterName}"></property>
+            </bean>
+        </property>
+
+        <property name="sentinels">
+            <set><!-- 多个sentinel配置多个RedisNode -->
+                <bean class="org.springframework.data.redis.connection.RedisNode">
+                    <constructor-arg name="host" value="${redis.sentinel.ip1}" />
+                    <constructor-arg name="port" value="${redis.sentinel.port1}" />
+                </bean>
+                <bean class="org.springframework.data.redis.connection.RedisNode">
+                    <constructor-arg name="host" value="${redis.sentinel.ip2}" />
+                    <constructor-arg name="port" value="${redis.sentinel.port2}" />
+                </bean>
+                <bean class="org.springframework.data.redis.connection.RedisNode">
+                    <constructor-arg name="host" value="${redis.sentinel.ip3}" />
+                    <constructor-arg name="port" value="${redis.sentinel.port3}" />
+                </bean>
+            </set>
+        </property>
+    </bean>
+
+    <bean id="jedisConnectionFactory"
+          class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+        <property name="usePool" value="true"></property>
+        <property name="hostName" value="${redis.ip}" />
+        <property name="port" value="${redis.port}" />
+        <property name="password" value="${redis.password}" />
+        <property name="timeout" value="${redis.timeout}" />
+        <property name="database" value="${redis.default.db}"></property>
+        <constructor-arg index="0" ref="redisSentinelConfiguration" />
+        <constructor-arg index="1" ref="jedisPoolConfig" />
+    </bean>
+
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+        <property name="connectionFactory" ref="jedisConnectionFactory" />
+        <property name="KeySerializer">
+            <bean
+                    class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
+        </property>
+        <property name="ValueSerializer">
+            <bean
+                    class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
+        </property>
+        <property name="HashKeySerializer">
+            <bean
+                    class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
+        </property>
+        <property name="HashValueSerializer">
+            <bean
+                    class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
+        </property>
+    </bean>
+</beans>

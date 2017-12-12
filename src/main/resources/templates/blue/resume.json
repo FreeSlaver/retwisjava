@@ -1,0 +1,201 @@
+{
+  "label": "Programmer",
+  //  基本信息
+  "basics": {
+    "avatar": "/blue/images/1.jpg",
+    "name": "宋鑫",
+    "gender": "男",
+    "age": 27,
+    "birthday": "1990-10-10",
+    "native": "湖北武汉",
+    "phone": "18025360608",
+    "email": "songxin@3gods.com",
+    "website": "http://3gods.com.com",
+    "github": "https://github.com/songxin1990",
+    "workingYears": 6,
+    "englishLevel": "CET-4",
+    ""
+  },
+  //求职意向
+  "jobIntension": {
+    "position": "架构师",
+    "vocationalType": "金融",
+    "expectedCity": "深圳",
+    "salary": 550,
+    "entryDate": "2018-08-08"
+  },
+  //教育
+  "education": [
+    {
+      //机构 大学
+      "institution": "长江大学",
+      //机构名称
+      "institutionName": "长江大学",
+      //专业
+      "area": "计算机科学与技术",
+      //学位 学士
+      "degree": "学士学位",
+      "startDate": "2008年9月",
+      "endDate": "2012年7月",
+      "gpa": "4.0",
+      //课程
+      "courses": [
+        "DB1101 - Basic SQL"
+      ]
+    }
+  ],
+  //技能栈
+  "skills": [
+    {
+      "name": "Web Development",
+      //熟练程度
+      "level": "精通",
+      //哪些技能
+      "keywords": [
+        "HTML",
+        "CSS",
+        "Javascript"
+      ]
+    },
+    {
+      "name": "Web Development",
+      //熟练程度
+      "level": "精通",
+      //哪些技能
+      "keywords": [
+        "HTML",
+        "CSS",
+        "Javascript"
+      ]
+    },
+    {
+      "name": "Web Development",
+      //熟练程度
+      "level": "精通",
+      //哪些技能
+      "keywords": [
+        "HTML",
+        "CSS",
+        "Javascript"
+      ]
+    }
+  ],
+  //开源贡献
+  "contributions": [
+    {
+      "projectName": "zipkin-brave",
+      "projectUrl": "http://github.com/zipkin-brave",
+      "prName": "brave-sparkjava",
+      "prUrl": "http://xxxx"
+    }
+  ],
+  //工作与项目经验
+  "companyProjects": [
+    {
+      "company": "中集电商",
+      "companyHome": "http://company.com",
+      "companyProfile": "中集电商是做e站的",
+      "startDate": "2013年1月",
+      "endDate": "2014年1月",
+      "position": "高级软件工程师",
+      "responsibility": "负责XX模块编码",
+      "projects": [
+        {
+          "name": "多媒体信息发布系统",
+          "startDate": "2011-11-11",
+          "endDate": "2013-11-11",
+          "keywords": "netty,mvn,tomat",
+          "summary": "通过终端上报的数据，以及查询其他系统的数据接口，来判断终端是否发生故障，并推导出故障解决方案，进行自动修复或推送工单转人工处理。系统追求准确性，时效性。主要实现是消费kafka中数据，使用二叉树遍历各个逻辑判断节点，得到节点现象，聚合后，推测出故障类型，推导出解决方案，输出最终结果，并推送工单"
+        },
+        {
+          "name": "多媒体信息发布系统",
+          "startDate": "2011-11-11",
+          "endDate": "2013-11-11",
+          "keywords": "netty,mvn,tomat",
+          "summary": "通过终端上报的数据，以及查询其他系统的数据接口，来判断终端是否发生故障，并推导出故障解决方案，进行自动修复或推送工单转人工处理。系统追求准确性，时效性。主要实现是消费kafka中数据，使用二叉树遍历各个逻辑判断节点，得到节点现象，聚合后，推测出故障类型，推导出解决方案，输出最终结果，并推送工单"
+        },
+        {
+          "name": "多媒体信息发布系统",
+          "startDate": "2011-11-11",
+          "endDate": "2013-11-11",
+          "keywords": "netty,mvn,tomat",
+          "summary": "通过终端上报的数据，以及查询其他系统的数据接口，来判断终端是否发生故障，并推导出故障解决方案，进行自动修复或推送工单转人工处理。系统追求准确性，时效性。主要实现是消费kafka中数据，使用二叉树遍历各个逻辑判断节点，得到节点现象，聚合后，推测出故障类型，推导出解决方案，输出最终结果，并推送工单"
+        }
+      ]
+    }
+  ],
+  //实习经验
+  "internship": [
+    {
+      "company": "Company",
+      "position": "President",
+      "website": "http://company.com",
+      "startDate": "2013-01-01",
+      "endDate": "2014-01-01",
+      "summary": "Description...",
+      "highlights": [
+        "Started the company"
+      ]
+    }
+  ],
+  //作品
+  "works": [
+    {
+      "name": "简历在线制作",
+      "url": "http://3gods.com",
+      "img": "xxxUrl"
+    },
+    {
+      "name": "个人博客",
+      "url": "http://3gods.com",
+      "img": "xxxUrl"
+    }
+  ],
+  //奖项
+  "awards": [
+    {
+      "title": "Award",
+      "date": "2014-11-01",
+      "awarder": "Company",
+      "summary": "There is no spoon."
+    }
+  ],
+  //出版
+  "publications": [
+    {
+      "name": "Publication",
+      "publisher": "Company",
+      "releaseDate": "2014-10-01",
+      "website": "http://publication.com",
+      "summary": "Description..."
+    }
+  ],
+  //志愿活动
+  "volunteer": [
+    {
+      "organization": "Organization",
+      "position": "Volunteer",
+      "website": "http://organization.com/",
+      "startDate": "2012-01-01",
+      "endDate": "2013-01-01",
+      "summary": "Description...",
+      "highlights": [
+        "Awarded 'Volunteer of the Month'"
+      ]
+    }
+  ],
+  //兴趣爱好
+  "interests": [
+    {
+      "name": "Wildlife",
+      "keywords": [
+        "Ferrets",
+        "Unicorns"
+      ]
+    }
+  ],
+  "selfIntro": {
+    //自我评价
+    "selfAppraisal": "一个很牛逼的人。"
+  }
+}

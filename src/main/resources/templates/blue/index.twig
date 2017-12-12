@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Resume</title>
+    <link type="text/css" rel="stylesheet" href="/blue/css/blue.css"/>
+    <!--[if IE 7]>
+    <link href="/blue/css/ie7.css" rel="stylesheet" type="text/css"/>
+    <![endif]-->
+    <!--[if IE 6]>
+    <link href="/blue/css/ie6.css" rel="stylesheet" type="text/css"/>
+    <![endif]-->
+    <script src="https://use.fontawesome.com/5484573b21.js"></script>
+</head>
+<body>
+<!-- Begin Wrapper -->
+<div id="wrapper">
+    <div class="wrapper-top"></div>
+    <div class="wrapper-mid">
+        <!-- Begin Paper -->
+        <div id="paper">
+            <div class="paper-top"></div>
+            <div id="paper-mid">
+                <div class="entry">
+                    <h2>基本信息</h2>
+                    <!-- Begin Personal Information -->
+                    <div class="self">
+                        {#<h1 class="name">{{ basics.name }}</h1>#}
+                        <ul>
+                            <li>姓名:{{ basics.name }}</li>
+                            <li>性别:{{ basics.gender }}</li>
+                            <li>年龄:{{ basics.age }}</li>
+                            <li>出生日期:{{ basics.birthday }}</li>
+                            <li>工作年限:{{ basics.workingYears }}年</li>
+                            <li>邮箱:{{ basics.email }}</li>
+                            <li>手机:{{ basics.phone }}</li>
+                            <li>个人主页:{{ basics.website }}</li>
+                            <li>Github:{{ basics.github }}</li>
+                        </ul>
+                    </div>
+                    <img class="portrait" src="{{ basics.avatar }}" alt="{{ basics.name }}"/>
+                    <!-- End Personal Information -->
+
+                </div>
+                <!--Intension Job-->
+                <div class="entry">
+                    <h2>求职期望</h2>
+                    <div class="content">
+                        <p><span>期望行业:{{ jobIntension.vocationalType }}</span>
+                            <span> 期望岗位:{{ jobIntension.position }}</span>
+                            <span> 目标城市:{{ jobIntension.expectedCity }}</span>
+                            <span> 期望年薪:{{ jobIntension.salary }}K</span>
+                            <span> 入职时间:{{ jobIntension.entryDate }}</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="entry">
+                    <h2>教育经历</h2>
+                    {% for edu in education %}
+                        <div class="content">
+                            <h3>{{ edu.startDate }}~{{ edu.endDate }}</h3>
+                            <p><span>{{ edu.institutionName }}</span>
+                                <span>{{ edu.area }}专业</span><span>{{ edu.studyType }}</span>
+                            </p>
+                            {#<p>{{ edu.courses }}</p>#}
+
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- End 2nd Education -->
+
+                <!--Begin Contributions-->
+                <div class="entry">
+                    <h2>开源贡献</h2>
+                    {% for con in contributions %}
+                        <div class="content">
+
+                            <p><span><a href="{{ con.projectUrl }}">{{ con.projectName }}</a></span>
+                                <span><a href="{{ con.prUrl }}"> {{ con.prName }} </a></span></p>
+                        </div>
+                    {% endfor %}
+                </div>
+                <!--End Contributions -->
+
+                <!-- Begin 3rd Row -->
+                <div class="entry">
+                    <h2>工作与项目</h2>
+                    {% for cp in companyProjects %}
+                        <div class="content">
+                            <h3>{{ cp.startDate }}~{{ cp.endDate }}<br>
+                                {{ cp.company }}<br>
+                                {{ cp.position }}<br>
+                            </h3>
+                            <!--项目起止时间，名称，-->
+                            <ul class="info">
+                                {% for p in cp.projects %}
+                                    <li>
+                                        <h4 class="project">{{ p.startDate }}~{{ p.endDate }} {{ p.name }}</h4>
+                                        <p>{{ p.summary }}<br>
+                                            使用到了:{{ p.keywords }}
+                                        </p>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- End 3rd Row -->
+                <!-- Begin 4th Row -->
+                <div class="entry">
+                    <h2>技能列表</h2>
+                    <div class="content">
+                        <h3></h3>
+                        <ul class="skills">
+                            {% for skill in skills %}
+                                <li>{{ skill.level }}{{ skill.keywords }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <!-- End 4th Row -->
+                <!-- Begin 5th Row -->
+                <div class="entry">
+                    <h2>作品展示</h2>
+                    <div class="content">
+                        <ul class="works">
+                            {% for work in works %}
+                                <li><a href="{{ work.url }}" rel="gallery" title="{{ work.name }}">
+                                        <img src="{{ work.img }}" alt="{{ work.name }}"/>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <!-- Begin 5th Row -->
+
+                <!-- Begin 1st Row -->
+                <div class="entry">
+                    <h2>自我介绍</h2>
+                    <div class="content">
+                        {#<p>{{ selfIntro.oneWord }}</p>#}
+                        <p>{{ selfIntro.selfAppraisal }}</p>
+                    </div>
+                </div>
+                <!-- End 1st Row -->
+            </div>
+
+            <div class="clear"></div>
+            <div class="paper-bottom"></div>
+        </div>
+        <!-- End Paper -->
+    </div>
+    <div class="wrapper-bottom"></div>
+</div>
+<!-- End Wrapper -->
+</body>
+</html>

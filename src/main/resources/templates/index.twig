@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fake-twitter</title>
+    <link href="/css/app.css" rel="stylesheet" type="text/css">
+    <script src="https://use.fontawesome.com/5484573b21.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="/js/app.js"></script>
+</head>
+<body>
+<div class="header">
+    <a href="#"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
+    <a href="#"><i class="fa fa-at" aria-hidden="true"></i>Connect</a>
+    <a href="#"><i class="fa fa-wifi" aria-hidden="true"></i>Discover</a>
+    <a href="#"><i class="fa fa-user" aria-hidden="true"></i>Me</a>
+    <input type="text" placeholder="Search" name="search" id="search"><i class="fa fa-search" aria-hidden="true"
+                                                                         id="searchSubmit"></i>
+    <!--设置按钮-->
+    <a href="#"> <i class="fa fa-cog" aria-hidden="true"></i></a>
+</div>
+
+<div class="container">
+    <div class="nav">
+        <!--tweets-->
+        <div class="aside tweets">
+            <h3>Tweets<i class="fa fa-chevron-right" aria-hidden="true"></i></h3>
+            <a href="#">Following<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+            <a href="#">Followers<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+            <a href="#">Favorites<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+            <a href="#">Lists<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+
+        </div>
+        <!--tweet to me-->
+        <div class="aside tweet2me">
+            <h3>Tweets to Wilam Shakespeare</h3>
+            <a href="#">@willyshakes</a>
+        </div>
+
+        <!--photos-->
+        <div class="aside photo">
+            <img src="/img/pic1.jpg">
+            <img src="/img/pic2.jpg">
+            <img src="/img/pic3.jpg">
+            <img src="/img/pic4.jpg">
+            <img src="/img/pic5.png">
+            <img src="/img/pic6.png">
+            <a href="#">View all photo and videos</a>
+        </div>
+
+    </div>
+
+    <div class="main">
+        <div class="aside profile">
+            <img src="/img/pic10.jpg">
+            <h2>William Shakespeare</h2>
+            <span>@willyshakes</span>
+            <p>Writes the occasional story and poem<br>
+                London, UK – http://www.thebard.com
+            </p>
+        </div>
+        <!--<div class="follow" style="display: none">
+            <a href="#">
+                <span>14234</span>
+                <span>TWEETS</span>
+            </a>
+            <a href="#">
+                <span>14234</span>
+                <span>FOLLOWING</span>
+            </a>
+            <a href="#">
+                <span>14231554</span>
+                <span>FOLLOWERS</span>
+            </a>
+            <i class="fa fa-comment" aria-hidden="true"></i>Following
+        </div>-->
+        <div class="aside newTweet">
+            <h2>New Tweet</h2>
+            <img src="/img/pic10.jpg">
+            {#<form method="post" action="/tweet/add" id="addTweet">#}
+
+                <input type="text" hidden value="1" name="uid">
+                <textarea placeholder="新鲜事" name="newTweet" id="newTweet" cols="60" rows="5" required></textarea>
+                <div>
+                    <a href="#"><i class="fa fa-picture-o" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
+                    <!--<div id="submit">发布</div>-->
+                    <input type="submit" value="发布" id="submit">
+                </div>
+            {#</form>#}
+        </div>
+
+        <div class="tweet-list" id="tweetList">
+            {% include 'tweetList.twig' %}
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
